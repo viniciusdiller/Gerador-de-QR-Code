@@ -1,52 +1,89 @@
-Claro, aqui está o README.md atualizado com a adição da dica sobre o "Scan to Sheets":
-
 Gerador de QR Code para Eventos
-Este projeto contém scripts Python para gerar QR codes a partir de uma lista de participantes, criando imagens simples de QR code ou crachás formatados para eventos.
 
-Funcionalidades
-Existem dois scripts principais:
+Este projeto contém scripts em Python para gerar QR Codes a partir de uma lista de participantes, permitindo criar:
 
-QR Sem Formatação.py: Gera imagens PNG de QR codes simples. O conteúdo de cada QR code é o CPF;Nome do participante.
+QR Codes simples (apenas a imagem do código)
 
-QR Formatado para EventOS.py: Gera imagens PNG formatadas como crachás. Cada crachá inclui o nome do participante, a sua identificação (ex: "Visitante") e um QR code (com o conteúdo CPF;Nome), tudo centralizado num fundo branco.
+Crachás completos formatados para uso em eventos
 
-Passo a Passo para Utilização
+🚀 Funcionalidades
+🔹 1. QR Sem Formatação (QR Sem Formatação.py)
+
+Gera imagens PNG apenas com o QR Code.
+Cada QR contém:
+
+CPF;Nome
+
+🔹 2. QR Formatado para Eventos (QR Formatado para Eventos.py)
+
+Gera crachás completos com:
+
+Nome do participante
+
+Identificação (ex.: Visitante, Palestrante, etc.)
+
+QR Code centralizado
+
+Fundo branco, pronto para impressão
+
+🛠️ Passo a Passo para Utilização
 1. Preparar o Ambiente
-Certifique-se de que tem o Python instalado. Em seguida, instale as bibliotecas necessárias:
 
-Bash
+Certifique-se de que o Python 3 está instalado.
+Depois, instale as dependências:
 
 pip install pandas qrcode pillow
+
 2. Criar o Ficheiro de Entrada
-Os scripts procuram um ficheiro Excel chamado NovosVisitantes.xlsx na mesma pasta. Este ficheiro deve conter as seguintes colunas:
 
-Nome
+Os scripts procuram um arquivo chamado NovosVisitantes.xlsx na mesma pasta.
+Ele deve conter as colunas:
 
-CPF
-
-Identificação
-
+Nome	CPF	Identificação
 3. Executar o Script
-Pode escolher qual script executar, dependendo da sua necessidade:
 
-Para gerar QR codes simples:
+Você pode executar cada script conforme sua necessidade:
 
-Bash
-
+▶️ Gerar QR Codes simples
 python "QR Sem Formatação.py"
-Isto criará uma pasta chamada QR-Code-sem-formatação e guardará as imagens PNG lá dentro, nomeadas pelo CPF do participante.
 
-Para gerar crachás formatados:
 
-Bash
+As imagens serão salvas na pasta:
 
+QR-Code-sem-formatação/
+
+
+Cada arquivo será nomeado pelo CPF do participante.
+
+▶️ Gerar crachás formatados
 python "QR Formatado para Eventos.py"
-Isto criará uma pasta chamada QR-Code-Formatado e guardará os crachás PNG lá dentro, também nomeados pelo CPF.
+
+
+Os crachás serão salvos na pasta:
+
+QR-Code-Formatado/
+
+
+Também com nomes baseados no CPF.
 
 💡 Dica de Uso: Leitura dos QR Codes
-Para facilitar o controle de presença ou registo, os QR codes gerados (que contêm CPF;Nome) podem ser lidos por aplicações de scanner.
 
-Uma opção prática é usar a aplicação "Scan to Sheets". Pode configurar esta aplicação para se conectar à sua conta Google e, ao ler um QR code, ela envia os dados lidos (o CPF e o Nome) diretamente para uma Planilha Google (Google Sheet) que pode designar, automatizando o registo de entrada.
+Para registrar presença ou controlar acessos, os QR Codes podem ser lidos por qualquer app de scanner.
 
-Exemplos
-As pastas QR-Code-sem-formatação e QR-Code-Formatado já contêm ficheiros de exemplo para que possa ver o resultado final de cada script.
+Uma opção prática é o app Scan to Sheets, que:
+
+Lê automaticamente o QR Code
+
+Envia o conteúdo (CPF;Nome) diretamente para uma Google Sheet
+
+Funciona como sistema de controle de entrada em tempo real
+
+📁 Exemplos
+
+As pastas:
+
+QR-Code-sem-formatação
+
+QR-Code-Formatado
+
+já incluem exemplos para visualizar o resultado dos scripts.
